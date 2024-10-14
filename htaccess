@@ -1,0 +1,46 @@
+### Put this in the root directory    /
+
+#Deny folder listing
+Options -Indexes
+
+#Block access to sensitive files
+<files .htaccess>
+Order allow,deny
+Deny from all
+</files>
+<files wp-config.php>
+Order allow,deny
+Deny from all
+</files>
+
+Header set X-Frame-Options SAMEORIGIN
+
+Header set X-XSS-Protection "1; mode=block"
+
+Header set Content-Security-Policy "default-src 'self';"
+
+Header set X-Content-Type-Options "nosniff"
+
+# Deny access to XMLRPC.
+<Files xmlrpc.php>
+Order Deny,Allow
+Deny from all
+</Files>
+
+# Block any WP info
+<files readme.html>
+Order allow,deny
+Deny from all
+</Files>
+<files license.txt>
+Order allow,deny
+Deny from all
+</files>
+
+ServerSignature Off
+
+Header unset X-Powered-By
+
+#RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://www.example.com/$1 [R,L]
