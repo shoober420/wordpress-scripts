@@ -1,0 +1,5 @@
+### put in the /wp-content/uploads    /wp-content/plugins     /wp-content/themes
+
+<Files *.php>
+deny from all
+</Files>
