@@ -1,0 +1,23 @@
+### put in /wp-admin directory
+
+#Block installation file
+<files install.php>
+Order allow,deny
+Deny from all
+</files>
+<files setup-config.php>
+Order allow,deny
+Deny from all
+</files>
+
+AuthName "Admins Only"
+AuthUserFile /home/yourdirectory/.htpasswds/public_html/wp-admin/passwd
+AuthGroupFile /dev/null
+AuthType basic
+require user putyourusernamehere
+
+#<Files admin-ajax.php>
+#Order allow,deny
+#Allow from all
+#Satisfy any 
+#</Files>
