@@ -1,5 +1,6 @@
 # wordpress-scripts
 Wordpress scripts
 
-htaccess
-php.ini
+- htaccess
+- php.ini
+- functions.php
